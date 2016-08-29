@@ -44,8 +44,7 @@ class Database {
             if(database.connectionCounter == MAX_CONNECTIONS-1){
                 database.connectionCounter = -1;
             }
-            database.connectionCounter++;
-            return database.connections[database.connectionCounter];
+            return database.connections[++database.connectionCounter];
         }
 
         public char get(int index) {
@@ -58,5 +57,9 @@ class Database {
             return db.tab.length;
         }
 
+        @Override
+        public String toString() {
+            return Database.getInstance() + " " + super.toString();
+        }
     }
 }
