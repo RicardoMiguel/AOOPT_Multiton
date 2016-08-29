@@ -1,0 +1,3 @@
+Database (table of characters) can be accessed only through a class implementing the interface type IConnection. The Database should be the Singleton but only a concrete connection should use it (not the main function). The connections should be Multitons: there exists only three of them returned by the getInstance method in the round-robin fasion (1 2 3 1 2 3 ...). 
+The client (main function) gets the connection object and using them it accesses the database. 
+Complete the following code. In the main function: get 4 connections and prove that they all use the same database. Then prove also that in fact (inspite of 4 initialized references) there exists only 3 connection objects. 
